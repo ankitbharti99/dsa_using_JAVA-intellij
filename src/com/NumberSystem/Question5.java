@@ -3,7 +3,7 @@ package com.NumberSystem;
 //ex- 2 = 1 0    -- (25+0)=25                3 = 1 1    -- (25+5)=30          4 = 1 0 0   -- (125+0+0)=125
 
 public class Question5 {
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         int num = 6;
         int ans = 0;
         int base = 5;

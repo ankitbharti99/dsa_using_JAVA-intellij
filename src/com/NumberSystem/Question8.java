@@ -2,7 +2,7 @@ package com.NumberSystem;
 //Check if the number is Power of 2 or not.
 
 public class Question8 {
-    static void main() {
+    public static void main(String[] args) {
         int n = 0;
         System.out.println(isPowerOf2(n));
         isPowerOfTwo(n);

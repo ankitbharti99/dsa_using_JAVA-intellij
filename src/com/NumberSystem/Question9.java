@@ -1,5 +1,5 @@
 package com.NumberSystem;
-// Power
+// Power using Bitwise. Time Complexity = O(log power)
 public class Question9 {
     public static void main(String[] args) {
         int base = 5;

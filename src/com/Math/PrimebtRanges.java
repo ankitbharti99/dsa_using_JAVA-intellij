@@ -1,10 +1,15 @@
 package com.Math;
+//Prime between ranges
 
-public class Question1 {
-    static void main() {
-        int n = 1;
-        System.out.println(isPrime(n));
+public class PrimebtRanges {
+    public static void main(String[] args) {
+    int n=40;
+    for(int i=0;i<=n;i++) {
+        if(isPrime(i) == true) {
+            System.out.print(i+" ");
+        }
     }
+}
 
     static boolean isPrime(int n) {
         if(n<=1) return false;

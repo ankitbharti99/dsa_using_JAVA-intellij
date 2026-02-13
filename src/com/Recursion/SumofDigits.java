@@ -2,15 +2,14 @@ package com.Recursion;
 
 public class SumofDigits {
     static void main() {
-        int n = 1342;
+        int n = 9005;
         System.out.println(sumofD(n));;
     }
 
     static int sumofD(int n) {
-        int rem = n%10;
-        if(n<=0) {
-            return rem;
+        if(n==0) {
+            return 0;
         }
-        return rem + sumofD(n/10);
+        return (n%10) + sumofD(n/10);
     }
 }

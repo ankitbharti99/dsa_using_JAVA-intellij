@@ -1,4 +1,5 @@
 package com.Recursion;
+//Print Product of digits and ignore if there is zero in between.
 
 public class ProdofDigits {
     static void main() {

@@ -3,7 +3,7 @@ package com.Recursion;
 public class PrintN1to5 {
     static void main() {
     int n=5;
-    print(n);;
+    print(n);
 }
 
 static void print(int n) {

@@ -7,6 +7,8 @@ public class SortedorNot {
     }
 
     static boolean sorted(int[] arr, int p1) {
+        if(arr.length <= 1) return true;
+
         if(p1 == arr.length-1){
             return true;
         }

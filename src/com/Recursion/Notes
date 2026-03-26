@@ -1,0 +1,4 @@
+/*
+In recursive function, If we modify the array then it will be modified for all recursive calls.
+Because, in every call it does not create new object but create new reference variable which points to the same object.
+*/

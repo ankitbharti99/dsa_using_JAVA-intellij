@@ -2,7 +2,7 @@ package com.Recursion.Array;
 
 public class SortedorNot {
     static void main() {
-        int []arr = {1,3,4,7,9};
+        int []arr = {-5,1,1,4,7,9};
         System.out.println(sorted(arr,0));
     }
 
@@ -12,7 +12,7 @@ public class SortedorNot {
         if(p1 == arr.length-1){
             return true;
         }
-        if(arr[p1] < arr[p1+1]) {
+        if(arr[p1] <= arr[p1+1]) {
             return sorted(arr, p1+1);
         }
         return false;

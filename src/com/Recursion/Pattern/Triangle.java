@@ -2,7 +2,7 @@ package com.Recursion.Pattern;
 
 import java.util.Scanner;
 
-public class InvertedTriangle {
+public class Triangle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of rows: ");
@@ -12,16 +12,16 @@ public class InvertedTriangle {
         sc.close();
     }
 
-    static void printPattern(int row, int temp) {
-        if(row==0) return;
+    static void printPattern(int n, int temp) {
+        if(n==0) return;
 
         if(temp > 0) {
+            printPattern(n, temp-1);
             System.out.print("*" + " ");
-            printPattern(row, temp-1);
         }
         else{
-        System.out.println();
-        printPattern(row-1, row-1);
+            printPattern(n-1, n-1);
+            System.out.println();
         }
     }
 }

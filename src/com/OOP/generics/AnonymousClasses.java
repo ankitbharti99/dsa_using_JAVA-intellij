@@ -81,4 +81,18 @@ public class AnonymousClasses {
         System.out.println("\nLambda Expression:");
         System.out.println(modulus.operation(20, 6));
     }
+/*
+    You can imagine it as if Java secretly generated this:
+
+    class SomeRandomName implements Operation {
+
+        @Override
+        public int operation(int a, int b) {
+            return a + b;
+        }
+    }
+
+    We never see SomeRandomName.
+    Java creates it automatically.
+ */
 }

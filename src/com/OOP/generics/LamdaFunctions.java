@@ -43,13 +43,19 @@ public class LamdaFunctions {
         Calculation sub = (a ,b) -> a - b;
         Calculation div = (a ,b) -> a / b;
         Calculation mul = (a ,b) -> a * b;
-
-//        int ans = add.calucation(2,5);
-//        System.out.println("ans " + ans);
+        System.out.println("-------Way 1------");
+        int ans = add.calculation(8,5);
+        int ans2 = sub.calculation(8,5);
+        int ans3 = div.calculation(8,5);
+        int ans4 = mul.calculation(8,5);
+        System.out.println(ans);
+        System.out.println(ans2);
+        System.out.println(ans3);
+        System.out.println(ans4);
 
 
         LamdaFunctions myCalculator = new LamdaFunctions();
-        System.out.println("-----------Other Way----------");
+        System.out.println("-----------Way 2----------");
         System.out.println(myCalculator.calculate(8,5, add));
         System.out.println(myCalculator.calculate(8,5, sub));
         System.out.println(myCalculator.calculate(8,5, div));

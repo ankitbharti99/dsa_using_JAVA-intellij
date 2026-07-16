@@ -1,4 +1,4 @@
-package com.Sorting.CyclicSortLeetcodeQ;
+package com.sorting.CyclicSortLeetcodeQ;
 //https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
 
 import java.util.ArrayList;

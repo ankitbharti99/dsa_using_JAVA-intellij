@@ -1,4 +1,4 @@
-package com.BinarySLeetcodeQ;
+package com.binarysearch.leetcode;
 
 public class AgainRotatedArray33 {
     public static void main(String[] args) {

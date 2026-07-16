@@ -1,6 +1,4 @@
-package com.OOP.generics;
-
-import com.ankit.ArrayLists;
+package com.oop.generics;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;

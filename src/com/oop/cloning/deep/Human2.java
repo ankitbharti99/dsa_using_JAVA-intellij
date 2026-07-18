@@ -16,14 +16,14 @@ public class Human2 implements Cloneable{
     @Override
     public Object clone() throws CloneNotSupportedException{
         // this is deep copy
-        Human2 twin = (Human2)super.clone(); // this is actually shallow copy
+        Human2 twinMaker = (Human2)super.clone(); // this is actually shallow copy
 
         // make a deep copy
-        twin.arr = new int[twin.arr.length];
-        for (int i = 0; i < twin.arr.length; i++) {
-            twin.arr[i] = this.arr[i];
+        twinMaker.arr = new int[twinMaker.arr.length];
+        for (int i = 0; i < twinMaker.arr.length; i++) {
+            twinMaker.arr[i] = this.arr[i];
         }
-        return twin;
+        return twinMaker;
     }
 
 }

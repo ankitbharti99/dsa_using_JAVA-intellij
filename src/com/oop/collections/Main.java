@@ -3,6 +3,7 @@ package com.oop.collections;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 public class Main {
 
@@ -35,5 +36,15 @@ public class Main {
         // list2.size();
         // list1.clear();
         // list2.clear();
+
+
+        //Vector is (Synchronized)thread safe which makes it slower than ArrayList.
+        //and it grow its size 2x.
+        List<Integer> vector = new Vector<>();
+        vector.add(34);
+        vector.add(21);
+        vector.add(5);
+        vector.add(25);
+        System.out.println(vector);
     }
 }

@@ -1,4 +1,4 @@
-package com.oop.InBuiltPackages;
+package com.oop.inBuiltPackages;
 //Object Class is parent class of all Java classes.
 //It is an in-built class
 

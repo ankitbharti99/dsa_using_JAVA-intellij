@@ -86,4 +86,34 @@ public class LL {
             this.next = next;
         }
     }
-}
+
+    public void deleteAtFirst() {
+        head = head.next;
+        if(head == null) {
+            tail = null;
+        }
+        size--;
+    }
+
+    public void deleteAtLast() {
+        if(tail == null) {
+            System.out.println("LinkList is empty");
+            return;
+        }
+
+        if(size == 1) {
+            head = null;
+            tail = null;
+            size--;
+            return;
+        }
+        Node temp = head;
+        for(int i=1;i<size-1;i++) {
+            temp = temp.next;
+        }
+            tail = temp;
+            tail.next = null;
+            size--;
+        }
+
+    }

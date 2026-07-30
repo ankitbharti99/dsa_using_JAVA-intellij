@@ -15,7 +15,17 @@ public class Main {
         list.insertAtLast(5);
         list.display();
 
-        list.insertAtPosition(11,-5);
+        try {
+            list.insertAtPosition(11, -5);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Invalid index");
+        }
+        list.display();
+
+        list.deleteAtFirst();
+        list.display();
+
+        list.deleteAtLast();
         list.display();
     }
 }

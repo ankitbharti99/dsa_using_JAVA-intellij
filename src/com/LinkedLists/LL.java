@@ -43,7 +43,6 @@ public class LL {
 
         int pos = index-1;
         Node node = new Node(value);
-        node.pos =
         head = node;
 
         if(tail == null) {

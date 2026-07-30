@@ -14,5 +14,8 @@ public class Main {
         list.insertAtLast(13);
         list.insertAtLast(5);
         list.display();
+
+        list.insertAtPosition(11,-5);
+        list.display();
     }
 }

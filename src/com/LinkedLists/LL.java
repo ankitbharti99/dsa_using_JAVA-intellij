@@ -36,20 +36,30 @@ public class LL {
     }
 
     public void insertAtPosition(int value, int index) {
-        if(tail == null) {
+        if(index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index == 0) {
             insertAtFirst(value);
             return;
         }
 
-        int pos = index-1;
-        Node node = new Node(value);
-        head = node;
-
-        if(tail == null) {
-            tail = head;
+        if (index == size) {
+            insertAtLast(value);
+            return;
         }
 
-        size += 1;
+        Node temp = head;
+        for(int i=1;i<index;i++) {
+            temp = temp.next;
+        }
+//        Node node = new Node(value);
+//        node.next = temp.next;
+        //OR instead to above 2 line just use another constructor.
+        Node node = new Node(value,temp.next);
+        temp.next = node;
+
+        size++;
     }
 
     public void display() {

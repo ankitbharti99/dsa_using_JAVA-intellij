@@ -9,6 +9,10 @@ public class LL {
         this.size = 0;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public void insertAtFirst(int value) {
         Node node = new Node(value);
         node.next = head;
@@ -88,10 +92,17 @@ public class LL {
     }
 
     public void deleteAtFirst() {
+        if (head == null) {
+            System.out.println("LinkedList is empty");
+            return;
+        }
+
         head = head.next;
-        if(head == null) {
+
+        if (head == null) {
             tail = null;
         }
+
         size--;
     }
 
@@ -102,9 +113,7 @@ public class LL {
         }
 
         if(size == 1) {
-            head = null;
-            tail = null;
-            size--;
+            deleteAtFirst();
             return;
         }
         Node temp = head;
@@ -116,4 +125,26 @@ public class LL {
             size--;
         }
 
+    public void deleteAtPosition(int index) {
+        if(index >= size || index < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if(index == 0) {
+            deleteAtFirst();
+            return;
+        }
+
+        if(index == size) {
+            deleteAtLast();
+            return;
+        }
+
+        Node temp = head;
+        for(int i=1; i<index; i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        size--;
     }
+        }

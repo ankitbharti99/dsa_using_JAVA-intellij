@@ -27,5 +27,15 @@ public class Main {
 
         list.deleteAtLast();
         list.display();
+
+
+        try {
+            list.deleteAtPosition(4);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Invalid index");
+        }
+        list.display();
+
+        System.out.println("SIZE = " + list.getSize());
     }
 }

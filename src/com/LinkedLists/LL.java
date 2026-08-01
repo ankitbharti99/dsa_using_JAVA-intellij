@@ -77,6 +77,25 @@ public class LL {
         System.out.println();
     }
 
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public Node findNode(int val) {
+        Node node = head;
+
+        for (int i = 0; i < size; i++) {
+            if(node.value == val) return node;
+            node = node.next;
+        }
+        return null;
+    }
+
+
     private class Node {
         private int value;
         private Node next;
@@ -88,6 +107,11 @@ public class LL {
         public Node(int value, Node next) {
             this.value = value;
             this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
         }
     }
 

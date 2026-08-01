@@ -37,5 +37,8 @@ public class Main {
         list.display();
 
         System.out.println("SIZE = " + list.getSize());
+
+        System.out.println(list.get(3));
+        System.out.println(list.findNode(26));;
     }
 }

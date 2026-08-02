@@ -1,9 +1,28 @@
-package com.LinkedLists;
+package com.LinkedLists.singly;
 
 public class LL {
     private Node head;
     private Node tail;
     private int size;
+
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+    }
 
     public LL() {
         this.size = 0;
@@ -96,25 +115,6 @@ public class LL {
     }
 
 
-    private class Node {
-        private int value;
-        private Node next;
-
-        public Node(int value) {
-            this.value = value;
-        }
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-    }
-
     public void deleteAtFirst() {
         if (head == null) {
             System.out.println("LinkedList is empty");
@@ -159,7 +159,7 @@ public class LL {
             return;
         }
 
-        if(index == size) {
+        if(index == size-1) {
             deleteAtLast();
             return;
         }

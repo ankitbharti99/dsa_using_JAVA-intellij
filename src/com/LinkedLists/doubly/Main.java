@@ -7,7 +7,7 @@ public class Main {
         list.insertAtFirst(7);
         list.insertAtFirst(5);
         list.displayForward();
-        System.out.println(list.getSize());;
+        System.out.println(list.getSize());
 
         list.insertAtLast(23);
         list.insertAtLast(10);

@@ -115,4 +115,19 @@ public class DoublyLL {
         }
         System.out.println("END");
     }
+
+    public void deleteAtFirst() {
+        if (head == null) {
+            System.out.println("LinkedList is empty");
+            return;
+        }
+
+        head = head.next;
+
+        if (head == null) {
+            tail = null;
+        }
+
+        size--;
+    }
 }

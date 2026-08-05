@@ -102,7 +102,7 @@ public class DoublyLL {
         Node temp = head;
 
         while (temp != null) {
-            System.out.print(temp.value + " -> ");
+            System.out.print(temp.value + " <-> ");
             temp = temp.next;
         }
         System.out.println("END");
@@ -112,7 +112,7 @@ public class DoublyLL {
         Node temp = tail;
 
         while (temp != null) {
-            System.out.print(temp.value + " -> ");
+            System.out.print(temp.value + " <-> ");
             temp = temp.prev;
         }
         System.out.println("END");
@@ -153,25 +153,35 @@ public class DoublyLL {
     }
 
     public void deleteAtPosition(int index) {
-        if(index > size || index < 0) {
+        if(index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
 
+        if(index == 0) {
+            deleteAtFirst();
+            return;
+        }
+        if(index == size-1) {
+            deleteAtLast();
+            return;
+        }
 
         if(index < size/2) {
-            Node temp = new Node();
+            Node temp = head;
             for(int i=0; i<index-1; i++) {
                 temp = temp.next;
             }
-            temp.next = temp.next.next;
-            temp.next.next.prev = temp;
+            Node nodeToDelete = temp.next;
+            temp.next = nodeToDelete.next;
+            nodeToDelete.next.prev = temp;
         } else {
-            Node temp = new Node();
-            for (int i = 0; i < size-index-1; i++) {
-                temp = temp.next;
+            Node temp = tail;
+            for (int i = 0; i < size-index-2; i++) {
+                temp = temp.prev;
             }
-            temp.prev.prev.next = temp;
-            temp.prev = temp.prev.prev;
+            Node nodeToDelete = temp.prev;
+            temp.prev = nodeToDelete.prev;
+            nodeToDelete.prev.next = temp;
         }
         size--;
     }

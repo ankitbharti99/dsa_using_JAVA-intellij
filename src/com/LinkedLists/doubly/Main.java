@@ -5,6 +5,7 @@ public class Main {
         DoublyLL list = new DoublyLL();
         list.insertAtFirst(12);
         list.insertAtFirst(7);
+        list.insertAtFirst(3);
         list.insertAtFirst(5);
         list.displayForward();
         System.out.println(list.getSize());

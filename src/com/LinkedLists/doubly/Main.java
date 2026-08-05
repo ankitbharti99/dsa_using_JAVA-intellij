@@ -17,5 +17,14 @@ public class Main {
 
         list.insertAtPosition(55,5);
         list.displayForward();
+
+        list.deleteAtFirst();
+        list.displayForward();
+
+        list.deleteAtLast();
+        list.displayForward();
+
+        list.deleteAtPosition(3);
+        list.displayForward();
     }
 }

@@ -1,5 +1,7 @@
 package com.LinkedLists.doubly;
 
+import com.LinkedLists.singly.LL;
+
 public class DoublyLL {
     private Node head;
     private Node tail;
@@ -128,6 +130,49 @@ public class DoublyLL {
             tail = null;
         }
 
+        size--;
+    }
+
+    public void deleteAtLast() {
+        if(tail == null) {
+            System.out.println("LinkList is empty");
+            return;
+        }
+
+        if(size == 1) {
+            deleteAtFirst();
+            return;
+        }
+        Node temp = head;
+        for(int i=1;i<size-1;i++) {
+            temp = temp.next;
+        }
+        tail = temp;
+        tail.next = null;
+        size--;
+    }
+
+    public void deleteAtPosition(int index) {
+        if(index > size || index < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+
+        if(index < size/2) {
+            Node temp = new Node();
+            for(int i=0; i<index-1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            temp.next.next.prev = temp;
+        } else {
+            Node temp = new Node();
+            for (int i = 0; i < size-index-1; i++) {
+                temp = temp.next;
+            }
+            temp.prev.prev.next = temp;
+            temp.prev = temp.prev.prev;
+        }
         size--;
     }
 }

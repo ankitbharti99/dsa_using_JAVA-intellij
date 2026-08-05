@@ -153,36 +153,43 @@ public class DoublyLL {
     }
 
     public void deleteAtPosition(int index) {
-        if(index >= size || index < 0) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
 
-        if(index == 0) {
+        if (index == 0) {
             deleteAtFirst();
             return;
         }
-        if(index == size-1) {
+
+        if (index == size - 1) {
             deleteAtLast();
             return;
         }
 
-        if(index < size/2) {
+        if (index < size / 2) {
             Node temp = head;
-            for(int i=0; i<index-1; i++) {
+
+            // Move to the node just before the one to delete
+            for (int i = 0; i < index - 1; i++) {
                 temp = temp.next;
             }
-            Node nodeToDelete = temp.next;
-            temp.next = nodeToDelete.next;
-            nodeToDelete.next.prev = temp;
+
+            temp.next.next.prev = temp;
+            temp.next = temp.next.next;
+
         } else {
             Node temp = tail;
-            for (int i = 0; i < size-index-2; i++) {
+
+            // Move to the node just after the one to delete
+            for (int i = 0; i < size - index - 2; i++) {
                 temp = temp.prev;
             }
-            Node nodeToDelete = temp.prev;
-            temp.prev = nodeToDelete.prev;
-            nodeToDelete.prev.next = temp;
+
+            temp.prev.prev.next = temp;
+            temp.prev = temp.prev.prev;
         }
+
         size--;
     }
 }

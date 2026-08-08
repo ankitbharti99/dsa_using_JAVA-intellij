@@ -8,5 +8,8 @@ public class Main {
         list.insertAtLast(10);
         list.insertAtLast(73);
         list.display();
+
+        list.delete(16);
+        list.display();
     }
 }

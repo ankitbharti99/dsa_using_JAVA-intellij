@@ -85,19 +85,22 @@ public class LL {
         size++;
     }
 
-    //Insert using Recursion
+    // Insert using Recursion
     public void insertRec(int val, int index) {
-        insertRec(val, index-1, head);
+        head = insertRec(val, index, head);
     }
-    //helper
-    private void insertRec(int val, int index, Node temp) {
-        if(index == 0) {
-            Node newnode = new Node(val);
-            newnode.next = temp.next;
-            temp.next = newnode;
-            return;
+
+    // helper
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val);
+            temp.next  = node;
+            size++;
+            return temp;
         }
-        insertRec(val,index-1,temp.next);
+
+        node.next = insertRec(val, index-1, node.next);
+        return node;
     }
 
     public void display() {
@@ -119,14 +122,14 @@ public class LL {
         return node;
     }
 
-    public Node findNode(int val) {
+    public int findNode(int val) {
         Node node = head;
 
         for (int i = 0; i < size; i++) {
-            if(node.value == val) return node;
+            if(node.value == val) return i;
             node = node.next;
         }
-        return null;
+        return -1;
     }
 
 

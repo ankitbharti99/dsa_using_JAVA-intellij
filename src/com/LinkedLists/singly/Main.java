@@ -41,7 +41,7 @@ public class Main {
         System.out.println(list.get(3));
         System.out.println(list.findNode(26));
 
-        list.insertRec(30,3);
+        list.insertRec(3,4);
         list.display();
     }
 }

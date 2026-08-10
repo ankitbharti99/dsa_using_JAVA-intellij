@@ -85,6 +85,21 @@ public class LL {
         size++;
     }
 
+    //Insert using Recursion
+    public void insertRec(int val, int index) {
+        insertRec(val, index-1, head);
+    }
+    //helper
+    private void insertRec(int val, int index, Node temp) {
+        if(index == 0) {
+            Node newnode = new Node(val);
+            newnode.next = temp.next;
+            temp.next = newnode;
+            return;
+        }
+        insertRec(val,index-1,temp.next);
+    }
+
     public void display() {
         Node temp = head;
 

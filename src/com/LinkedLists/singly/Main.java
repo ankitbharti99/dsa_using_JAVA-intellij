@@ -39,6 +39,9 @@ public class Main {
         System.out.println("SIZE = " + list.getSize());
 
         System.out.println(list.get(3));
-        System.out.println(list.findNode(26));;
+        System.out.println(list.findNode(26));
+
+        list.insertRec(30,3);
+        list.display();
     }
 }

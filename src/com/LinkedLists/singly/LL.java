@@ -94,7 +94,7 @@ public class LL {
     private Node insertRec(int val, int index, Node node) {
         if (index == 0) {
             Node temp = new Node(val);
-            temp.next  = node;
+            temp.next = node;
             size++;
             return temp;
         }

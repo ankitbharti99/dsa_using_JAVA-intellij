@@ -8,17 +8,20 @@ public class RotateByKthPos {
     }
 
     static void RotateArr(int[] arr, int k) {
-        for(int i=0;i<arr.length;i++) {
-            while((k-1) < arr.length-1) {
-                int temp = arr[k-1];
-                arr[k-1] = arr[k];
-                arr[k] = temp;
+        k = k % arr.length;
+
+        for (int i = 0; i < k; i++) {
+            int temp = arr[0];
+
+            for (int j = 0; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
             }
-            k--;
+
+            arr[arr.length - 1] = temp;
         }
 
-        for(int i=0;i<arr.length;i++) {
-            System.out.print(arr[i]+" ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
     }
 }
